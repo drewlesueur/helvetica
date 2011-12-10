@@ -1,0 +1,77 @@
+<!doctype html>
+<html>
+  <head>
+    <style>
+      .helvetica {
+        font-family: Helvetica;
+        font-weight: bold;
+        font-size: 100px;
+      }
+      .helveticaNeue {
+        font-family: 'HelveticaNeue';
+        font-weight: bold;
+        font-size: 100px;
+      }
+      .boxes {
+        display: -webkit-box;
+      }
+      .horizontal {
+        -webkit-box-orient: horizontal;
+      }
+      .vertical {
+        -webkit-box-orient: vertical;
+      }
+      .start {
+        -webkit-box-pack: start;
+      }
+      .center {
+        -webkit-box-pack: center;
+      }
+      .end {
+        -webkit-box-pack: end;
+      }
+      .justify {
+        -webkit-box-pack: justify;
+      }
+
+      .start2 {
+        -webkit-box-align: start;
+      }
+      .center2 {
+        -webkit-box-align: center;
+      }
+      .end2 {
+        -webkit-box-align: end;
+      }
+      .justify2 {
+        -webkit-box-align: justify;
+      }
+
+    </style>
+    <script>
+      window.onload = function () {
+        var letters = "abcdefghijklmnopqrstuvwxyz!@"
+        var helveticaBox = document.querySelector("#helvetica")
+        var helveticaNeueBox = document.querySelector("#helveticaNeue")
+        for (var i=0; i< letters.length; i++) {
+          var helveticaLetter = document.createElement("div");
+          helveticaLetter.innerHTML = letters[i];
+          helveticaBox.appendChild(helveticaLetter)
+
+          var helveticaNeueLetter = document.createElement("div");
+          helveticaNeueLetter.innerHTML = letters[i];
+          helveticaNeueBox.appendChild(helveticaNeueLetter)
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="horizontal boxes">
+      <div id="helvetica" class="vertical boxes helvetica">
+      </div>
+      <div id="helveticaNeue" class="vertical boxes helveticaNeue">
+      </div>
+    </div>
+  </body>
+</html>
