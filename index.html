@@ -1,16 +1,22 @@
 <!doctype html>
 <html>
   <head>
+    <meta name="viewport" content="initial-scale=1.0;">
     <style>
-      .helvetica {
+      body {
         font-family: Helvetica;
+      }
+      .letter {
         font-weight: bold;
         font-size: 100px;
+        height: 150px;
+        width: 100px;
+      }
+      .helvetica {
+        font-family: Helvetica;
       }
       .helveticaNeue {
         font-family: 'HelveticaNeue';
-        font-weight: bold;
-        font-size: 100px;
       }
       .boxes {
         display: -webkit-box;
@@ -50,16 +56,18 @@
     </style>
     <script>
       window.onload = function () {
-        var letters = "abcdefghijklmnopqrstuvwxyz!@"
+        var letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@"
         var helveticaBox = document.querySelector("#helvetica")
         var helveticaNeueBox = document.querySelector("#helveticaNeue")
         for (var i=0; i< letters.length; i++) {
           var helveticaLetter = document.createElement("div");
           helveticaLetter.innerHTML = letters[i];
+          helveticaLetter.classList.add("letter")
           helveticaBox.appendChild(helveticaLetter)
 
           var helveticaNeueLetter = document.createElement("div");
           helveticaNeueLetter.innerHTML = letters[i];
+          helveticaNeueLetter.classList.add("letter")
           helveticaNeueBox.appendChild(helveticaNeueLetter)
 
         }
@@ -67,11 +75,16 @@
     </script>
   </head>
   <body>
+    <h1>Helvetica vs Helvetica Neue</h1>
+    <em>Must have both fonts installed</em>
     <div class="horizontal boxes">
       <div id="helvetica" class="vertical boxes helvetica">
       </div>
       <div id="helveticaNeue" class="vertical boxes helveticaNeue">
       </div>
+    </div>
+    <div>
+      <a href="https://github.com/drewlesueur/helvetica">https://github.com/drewlesueur/helvetica</a>
     </div>
   </body>
 </html>
